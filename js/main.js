@@ -23,6 +23,7 @@ function placeAvocado() {
   if (isPlaying) {
     avocado = randomIndex();
     renderState();
+    render();
   }
 }
 
@@ -91,6 +92,14 @@ function render() {
     $('button').text('Pause Game');
   } else {
     $('button').text('Start Game');
+  }
+  //render the board
+  for (var i = 0; i < 9; i++){
+    if (i === avocado){
+      $('#' + i).text("A");
+    } else {
+      $('#' + i).text("");
+    }
   }
 }
 
