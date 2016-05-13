@@ -1,21 +1,25 @@
 console.log('js loaded');
 
 // DATA MODEL
+
 var isPlaying = false;
 var avocado   = null;
 var guac      = [];
 
-// BEHAVIOR
-function start(){
-  isPlaying = true;
+
+//BEHAVIOR
+
+function toggleIsPlaying(){
+  if (isPlaying) {
+    isPlaying = false;
+  } else {
+    isPlaying = true;
+  }
 }
 
 
-
-
-
-
 // HELPER
+
 function renderState() {
   if (isPlaying) {
     console.log('game on');
@@ -67,9 +71,24 @@ function renderState() {
   }
 }
 
+
+// RENDER
+
+function render() {
+  if (isPlaying) {
+    $('button').text('Pause Game');
+  } else {
+    $('button').text('Start Game');
+  }
+}
+
+
 // INTERACTION
-//start game
-$('button').on('click', start);
+
+$('button').on('click', function() {
+  toggleIsPlaying();
+  render();
+});
 
 
 
