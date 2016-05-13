@@ -12,6 +12,7 @@ table {
   border: 1px solid black;
   margin: 0 auto;
   background: grey;
+  border-radius: 15px;
 }
 
 td {
