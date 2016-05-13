@@ -7,7 +7,7 @@ var avocado   = null;
 var guac      = [];
 
 
-//BEHAVIOR
+// BEHAVIOR
 
 function toggleIsPlaying(){
   if (isPlaying) {
@@ -17,6 +17,18 @@ function toggleIsPlaying(){
   }
 }
 
+setInterval(placeAvocado, 1000);
+
+function placeAvocado() {
+  if (isPlaying) {
+    avocado = randomIndex();
+    renderState();
+  }
+}
+
+function randomIndex() {
+  return Math.floor(Math.random() * 9);
+}
 
 // HELPER
 
@@ -89,7 +101,6 @@ $('button').on('click', function() {
   toggleIsPlaying();
   render();
 });
-
 
 
 
