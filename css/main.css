@@ -7,3 +7,17 @@ html, body {
 h1 {
   color: green;
 }
+
+table {
+  border: 1px solid black;
+  margin: 0 auto;
+  background: grey;
+}
+
+td {
+  width: 100px;
+  height: 100px;
+  border: 1px solid green;
+  background: white;
+  border-radius: 50%;
+}
